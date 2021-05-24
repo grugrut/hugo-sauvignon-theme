@@ -1,0 +1,9 @@
+<header>
+  <div>
+    <h1>{{ .Title }}</h1>
+    <hr>
+    {{ if eq .Type "posts" }}
+    {{ partial "post_meta.html" . }}
+    {{ end }}
+  </div>
+</header>

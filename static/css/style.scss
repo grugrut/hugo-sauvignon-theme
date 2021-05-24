@@ -1,3 +1,37 @@
+$primary: #40403E;
+$secondary: #808057;
+$light: #FFFFFA;
+$dark: #80807D;
+
+$body-bg: $light;
+
+$font-family-sans-serif: "Noto Sans JP", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-@import 'main';
+div.main {
+  box-shadow: 4px 4px 8px 0 $dark;
+  padding: 1ex;
+  background-color: $white;
+}
+
+nav {
+  background-color: #E6E6E1;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: $primary;
+  font-weight: 900;
+}
+
+.post-preview > a,
+.post-preview a:visited {
+  text-decoration: none;
+  color: $primary;
+}
+
+.post-preview a:focus,
+.post-preview > a:hover {
+  text-decoration: none;
+  color: $secondary;
+}
