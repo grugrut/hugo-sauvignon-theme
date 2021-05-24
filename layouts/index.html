@@ -5,7 +5,7 @@
     {{.}}
     {{ end }}
     
-    <div>
+    <div class="main">
       {{ $page := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
       {{ range $page.Pages }}
       {{ partial "post_preview" . }}
