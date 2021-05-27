@@ -1,8 +1,8 @@
-$primary: #3D3D3D;
-$primary-hover: #567D56;
-$secondary: #8C8C5F;
-$light: #FAFCFA;
-$dark: #7C7D7C;
+$primary: #3d3d3d;
+$primary-hover: #567d56;
+$secondary: #8c8c5f;
+$light: #fafcfa;
+$dark: #7c7d7c;
 
 $body-bg: $light;
 
@@ -17,17 +17,22 @@ div.main {
 }
 
 nav {
-  background-color: #E1E3E1;
+  background-color: #e1e3e1;
 }
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 900;
 }
 
 article.post h2 {
   padding-left: $spacer / 2;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   border-top: 4px solid $dark;
   border-bottom: 4px solid $dark;
 }
@@ -42,31 +47,18 @@ article.post h4 {
   border-left: 4px solid $dark;
 }
 
-article.post a,
-article.post a:visited {
-  color: $blue;
-  text-decoration: none;
-}
-
-article.post a:hover,
-article.post a:focus {
-  color: $primary-hover;
-  text-decoration: underline;
-}
-
 img {
   max-width: 100%;
 }
 
-th, td {
-  border: 1px solid #CCCCC8;
-  padding: .25rem .5rem;
+th,
+td {
+  border: 1px solid #ccccc8;
+  padding: 0.25rem 0.5rem;
 }
 tr:nth-child(2n) {
   background-color: $light;
 }
-
-/* post-preview */
 
 article.post-preview {
   padding-top: $spacer * 2;
@@ -82,15 +74,34 @@ article.post-preview:last-child {
   border-bottom: none;
 }
 
-.post-preview a,
-.post-preview a:visited {
+article.post a {
+  color: $blue;
+  text-decoration: none;
+}
+
+article.post-preview a {
   text-decoration: none;
   color: $primary;
 }
 
-.post-preview a:focus,
-.post-preview a:hover {
+article.post-preview a:visited {
+  text-decoration: none;
+  color: $primary;
+}
+
+article.post-preview a:focus,
+article.post-preview a:hover {
   text-decoration: none;
   color: $primary-hover;
 }
 
+article.post a:visited {
+  color: $blue;
+  text-decoration: none;
+}
+
+article.post a:hover,
+article.post a:focus {
+  color: $primary-hover;
+  text-decoration: underline;
+}
