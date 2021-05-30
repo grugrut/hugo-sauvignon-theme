@@ -18,6 +18,7 @@ div.main {
 
 nav {
   background-color: #e1e3e1;
+  font-weight: 900;
 }
 
 h1,
@@ -60,48 +61,105 @@ tr:nth-child(2n) {
   background-color: $light;
 }
 
+a,
+a:visited {
+  color: $blue;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: $primary-hover;
+  text-decoration: underline;
+}
+
+.text-muted > a {
+  color: $text-muted;
+}
+
 article.post-preview {
   padding-top: $spacer * 2;
   padding-bottom: $spacer * 2;
   border-bottom: 1px solid $dark;
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
-article.post-preview:first-child {
-  padding-top: 0;
-}
-
-article.post-preview:last-child {
-  border-bottom: none;
-}
-
-article.post a {
-  color: $blue;
-  text-decoration: none;
-}
-
-article.post-preview a {
+article.post-preview a,
+article.post-preview a:visited,
+nav a,
+nav a:visited,
+.pager a,
+.pager a:visited {
   text-decoration: none;
   color: $primary;
-}
 
-article.post-preview a:visited {
-  text-decoration: none;
-  color: $primary;
 }
 
 article.post-preview a:focus,
-article.post-preview a:hover {
+article.post-preview a:hover,
+nav a:focus,
+nav a:hover,
+.pager a:focus,
+.pager a:hover {
   text-decoration: none;
   color: $primary-hover;
 }
 
-article.post a:visited {
-  color: $blue;
-  text-decoration: none;
+.btn-primary:hover {
+  background-color: $primary-hover;
+  border-color: darken($primary-hover, 10%);
 }
 
-article.post a:hover,
-article.post a:focus {
-  color: $primary-hover;
-  text-decoration: underline;
+.btn-circle {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  padding: 0;
+}
+
+.btn-bi-stack {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  text-align: center;
+  vertical-align: -0.125rem;
+  color: color-contrast($primary);
+}
+
+.list-inline > li {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+header, footer {
+  padding: 30px 0;
+}
+
+.pager {
+  list-style: none;
+  text-align: center;
+  padding-left: 0;
+  margin-top: $spacer * 2;
+  li > a {
+    box-shadow: 4px 4px 8px 0 $dark;
+    padding: $spacer * 1.5 $spacer * 2;
+    background-color: $white;
+    display: inline;
+    font-weight: 900;
+  }
+  .next > a {
+    float: right;
+  }
+  .previous > a {
+    float: left;
+  }
+}
+
+pre.chroma {
+  padding: .5rem;
 }
