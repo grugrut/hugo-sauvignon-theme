@@ -16,16 +16,18 @@
                 <li class="previous">
                   <a
                     href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/"
-                    >&larr; NEWER POSTS</a
                   >
+                    &larr; NEWER POSTS
+                  </a>
                 </li>
               {{ end }}
               {{ if .Paginator.HasNext }}
                 <li class="next">
                   <a
                     href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/"
-                    >OLDER POSTS &rarr;</a
                   >
+                    OLDER POSTS &rarr;
+                  </a>
                 </li>
               {{ end }}
             </ul>
