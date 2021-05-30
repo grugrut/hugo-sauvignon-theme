@@ -1,14 +1,14 @@
 {
-    "printWidth": 120,
-    "tabWidth": 2,
-    "useTabs": false,
-    "singleQuote": false,
-    "overrides": [
-        {
-            "files": ["*.html"],
-            "options": {
-                "parser": "go-template"
-            }
-        }
-    ]
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "parser": "go-template"
+      }
+    }
+  ]
 }

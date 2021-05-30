@@ -6,7 +6,8 @@ $dark: #7c7d7c;
 
 $body-bg: $light;
 
-$font-family-sans-serif: "Noto Sans JP", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Noto Sans JP", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -40,12 +41,12 @@ article.post h2 {
 
 article.post h3 {
   padding-left: $spacer / 2;
-  border-bottom: 2px solid $dark;
+  border-left: 4px solid $dark;
 }
 
 article.post h4 {
   padding-left: $spacer / 2;
-  border-left: 4px solid $dark;
+  border-bottom: 2px solid $dark;
 }
 
 img {
@@ -97,7 +98,6 @@ nav a:visited,
 .pager a:visited {
   text-decoration: none;
   color: $primary;
-
 }
 
 article.post-preview a:focus,
@@ -136,7 +136,8 @@ nav a:hover,
   padding-left: 0.5rem;
 }
 
-header, footer {
+header,
+footer {
   padding: 30px 0;
 }
 
@@ -161,5 +162,5 @@ header, footer {
 }
 
 pre.chroma {
-  padding: .5rem;
+  padding: 0.5rem;
 }

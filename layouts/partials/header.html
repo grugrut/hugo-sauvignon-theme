@@ -2,10 +2,8 @@
   <div class="container">
     <div class="row">
       <h1>{{ .Title }}</h1>
-      <hr>
-      {{ if eq .Type "posts" }}
-      {{ partial "post_meta.html" . }}
-      {{ end }}
+      <hr />
+      {{ if eq .Type "posts" }}{{ partial "post_meta.html" . }}{{ end }}
     </div>
   </div>
 </header>

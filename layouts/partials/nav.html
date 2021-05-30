@@ -3,9 +3,11 @@
     <a class="navbar-brand" href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
     <ul class="nav justify-content-end">
       {{ range .Site.Menus.main.ByWeight }}
-      <li class="nav-item">
-        <a class="nav-link" title="{{ .Name }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
-      </li>
+        <li class="nav-item">
+          <a class="nav-link" title="{{ .Name }}" href="{{ .URL | relLangURL }}"
+            >{{ .Name }}</a
+          >
+        </li>
       {{ end }}
     </ul>
   </div>

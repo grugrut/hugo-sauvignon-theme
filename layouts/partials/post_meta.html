@@ -2,14 +2,14 @@
   {{ $datestr := default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format }}
   <i class="bi bi-calendar-fill"></i>&nbsp;{{ $datestr }}
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <i class="bi bi-journal-text"></i>&nbsp;{{.WordCount}}&nbsp;Words
+  <i class="bi bi-journal-text"></i>&nbsp;{{ .WordCount }}&nbsp;Words
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <i class="bi bi-hourglass-split"></i>&nbsp;{{.ReadingTime}}&nbsp;minutes
+  <i class="bi bi-hourglass-split"></i>&nbsp;{{ .ReadingTime }}&nbsp;minutes
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <i class="bi bi-person-fill"></i>&nbsp;{{.Site.Author.name | safeHTML}}
-  <br>
+  <i class="bi bi-person-fill"></i>&nbsp;{{ .Site.Author.name | safeHTML }}
+  <br />
   <i class="bi bi-tags-fill"></i>
-  {{range .Params.tags}}
-  <a href="/tags/{{. | urlize}}/">#{{ . }}</a>&nbsp;
+  {{ range .Params.tags }}
+    <a href="/tags/{{ . | urlize }}/">#{{ . }}</a>&nbsp;
   {{ end }}
 </span>

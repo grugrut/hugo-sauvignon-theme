@@ -2,11 +2,11 @@
   <a href="{{ .Permalink }}">
     <h2 class="post-title">{{ .Title }}</h2>
   </a>
-  <p class="post-meta">
-    {{ partial "post_meta" . }}
-  </p>
+  <p class="post-meta">{{ partial "post_meta" . }}</p>
   <div class="post-entry">
-    {{ if .Truncated }} {{ .Summary }}......
-    <a href="{{ .Permalink }}" class="post-read-more">[Read More]</a>
+    {{ if .Truncated }}
+      {{ .Summary }}......
+      <a href="{{ .Permalink }}" class="post-read-more">[Read More]</a>
     {{ end }}
+  </div>
 </article>

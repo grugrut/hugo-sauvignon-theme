@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "sass --style=compressed static/css/style.scss static/css/style.css",
     "build": "npm run build:css",
-    "lint": "stylelint static/css/style.scss && prettier -w static/css/style.scss"
+    "lint": "stylelint static/css/style.scss && prettier -w static/css/style.scss && prettier -w layouts"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "prettier": "^2.3.0",
-    "prettier-plugin-go-template": "^0.0.10",
+    "prettier-plugin-go-template": "^0.0.11-beta.7",
     "sass": "^1.34.0",
     "stylelint": "^13.13.1",
     "stylelint-config-recommended-scss": "^4.2.0",

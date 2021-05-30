@@ -1,18 +1,35 @@
 {{ define "main" }}
-<main>
-  <div class="container">
-    <div class="row gx-5">
-      <div class="col-lg-9 col-md-9">
-        <div class="main">
-          <article class="post">
-            {{ .Content }}
-          </article>
+  <main>
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-lg-9 col-md-9">
+          <div class="main">
+            <article class="post">
+              {{ .Content }}
+              {{ if $.Param "socialShere" }}
+                <section id="social-share">
+                  <div class="list-inline footer-links"></div>
+                </section>
+              {{ end }}
+              {{ if .Site.Params.showRelatedPosts }}
+                {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+                  {{ $.Scratch.Set "has_related" true }}
+                {{ end }}
+                {{ if $.Scratch.Get "has_related" }}
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                    {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
+                    {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+                      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                  </ul>
+                {{ end }}
+              {{ end }}
+            </article>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-3">
-        {{ partial "sidebar" }}
+        <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
 {{ end }}
