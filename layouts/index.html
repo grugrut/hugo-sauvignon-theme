@@ -1,34 +1,40 @@
 {{ define "main" }}
-<div class="row gx-5">
-  <div class="col-lg-9 col-md-9">
-    {{ with .Content }}
-    {{.}}
-    {{ end }}
-    
-    <div class="main">
-      {{ $page := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-      {{ range $page.Pages }}
-      {{ partial "post_preview" . }}
-      {{ end }}
-    </div>
+  <main>
+    <div class="container">
+      <div class="row gx-5">
+        <div class="col-lg-9 col-md-9">
+          {{ with .Content }}{{ . }}{{ end }}
 
-    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-    <ul class="pager main-pager">
-      {{if .Paginator.HasPrev }}
-      <li class="previous">
-        <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; NEWER POSTS</a>
-      </li>
-      {{ end }}
-      {{ if .Paginator.HasNext }}
-      <li class="next">
-        <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">OLDER POSTS &rarr;</a>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
-  </div>
-  <div class="col-lg-3 col-md-3">
-    {{ partial "sidebar" }}
-  </div>
-</div>
+          <div class="main">
+            {{ $page := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+            {{ range $page.Pages }}{{ partial "post_preview" . }}{{ end }}
+          </div>
+
+          {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+            <ul class="pager main-pager">
+              {{ if .Paginator.HasPrev }}
+                <li class="previous">
+                  <a
+                    href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/"
+                  >
+                    &larr; NEWER POSTS
+                  </a>
+                </li>
+              {{ end }}
+              {{ if .Paginator.HasNext }}
+                <li class="next">
+                  <a
+                    href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/"
+                  >
+                    OLDER POSTS &rarr;
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
+        <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
+      </div>
+    </div>
+  </main>
 {{ end }}

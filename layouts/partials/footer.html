@@ -1,5 +1,37 @@
 <footer>
+  <div class="container">
+    <div class="row">
+      <ul class="list-inline text-center footer-links">
+        {{ range .Site.Data.social.social_icons }}
+          {{ if isset $.Site.Author .id }}
+            <li>
+              <a
+                href="{{ printf .url (index $.Site.Author .id) }}"
+                title="{{ .title }}"
+              >
+                <button type="button" class="btn btn-primary btn-circle" />
+                <i class="{{ .icon }} btn-fa-stack "></i>
+              </a>
+            </li>
+          {{ end }}
+        {{ end }}
+        {{ if .Site.Params.rss }}
+          <li>
+            <a href="{{ "index.xml" | absLangURL }}" title="RSS">
+              <button type="button" class="btn btn-primary btn-circle">
+                <i class="fas fa-rss btn-fa-stack"></i>
+              </button>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+      <p class="credits text-muted text-center">
+        {{ if .Site.Author.name }}{{ .Site.Author.name }} &nbsp;{{ end }} &copy;
+        {{ .Site.LastChange.Format "2006" }}
+        {{ if .Site.Title }}
+          <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
+        {{ end }}
+      </p>
+    </div>
+  </div>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
