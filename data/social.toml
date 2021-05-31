@@ -2,10 +2,10 @@
 id = "github"
 url = "https://github.com/%s"
 title = "GitHub"
-icon = "bi bi-github"
+icon = "fab fa-github"
 
 [[social_icons]]
 id = "twitter"
 url = "https://twitter.com/%s"
 title = "Twitter"
-icon = "bi bi-twitter"
+icon = "fab fa-twitter"

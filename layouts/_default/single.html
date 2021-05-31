@@ -6,11 +6,8 @@
           <div class="main">
             <article class="post">
               {{ .Content }}
-              {{ if $.Param "socialShere" }}
-                <section id="social-share">
-                  <div class="list-inline footer-links"></div>
-                </section>
-              {{ end }}
+              <hr />
+              <section id="social-share">{{ partial "social_share" }}</section>
               {{ if .Site.Params.showRelatedPosts }}
                 {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
                   {{ $.Scratch.Set "has_related" true }}
@@ -24,9 +21,38 @@
                     {{ end }}
                   </ul>
                 {{ end }}
+                <div class="disqus-comments">{{ partial "disqus.html" . }}</div>
               {{ end }}
             </article>
           </div>
+          {{ if ne .Type "page" }}
+            <ul class="pager blog-pager">
+              {{ if .PrevInSection }}
+                <li class="previous">
+                  <a
+                    href="{{ .PrevInSection.Permalink }}"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="{{ .PrevInSection.Title }}"
+                  >
+                    &larr; Previous Post
+                  </a>
+                </li>
+              {{ end }}
+              {{ if .NextInSection }}
+                <li class="next">
+                  <a
+                    href="{{ .NextInSection.Permalink }}"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="{{ .NextInSection.Title }}"
+                  >
+                    Next Post &rarr;
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
         </div>
         <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
       </div>

@@ -1,0 +1,94 @@
+<div>
+  <h4>Share</h4>
+  <ul class="share list-inline footer-links">
+    <!-- Twitter -->
+    <li>
+      <a
+        href="//twitter.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Author.twitter }}"
+        target="_blank"
+        title="Share on Twitter"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-twitter btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+
+    <!-- Hatena -->
+    <li>
+      <a
+        href="//b.hatena.ne.jp/entry/{{ .Permalink }}"
+        target="_blank"
+        title="はてなブックマーク"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-hatena btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+
+    <!-- Facebook -->
+    <li>
+      <a
+        href="//www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
+        target="_blank"
+        title="Share on Facebook"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-facebook btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+
+    <!-- get pocket -->
+    <li>
+      <a
+        href="//getpocket.com/save?url={{ .Permalink }}"
+        target="_blank"
+        title="Save to Pocket"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-get-pocket btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+
+    <!-- Reddit -->
+    <li>
+      <a
+        href="//reddit.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}"
+        target="_blank"
+        title="Share on Reddit"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-reddit btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+
+    <!-- LinkedIn -->
+    <li>
+      <a
+        href="//www.linkedin.com/shareArticle?url={{ .Permalink }}&amp;title={{ .Title }}"
+        target="_blank"
+        title="Share on LinkedIn"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-linkedin-in btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+    <!-- Pinterest -->
+    <li>
+      <a
+        href="//www.pinterest.com/pin/create/button/?url={{ .Permalink }}&amp;description={{ .Title }}"
+        target="_blank"
+        title="Share on Pinterest"
+      >
+        <button type="button" class="btn btn-primary btn-circle">
+          <i class="fab fa-pinterest btn-fa-stack"></i>
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>

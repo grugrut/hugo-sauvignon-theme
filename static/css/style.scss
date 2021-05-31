@@ -122,7 +122,7 @@ nav a:hover,
   padding: 0;
 }
 
-.btn-bi-stack {
+.btn-fa-stack {
   font-size: 1.5rem;
   line-height: 1rem;
   text-align: center;
@@ -163,4 +163,10 @@ footer {
 
 pre.chroma {
   padding: 0.5rem;
+}
+
+.fa-hatena:before {
+  content: "B!";
+  font-family: Verdana, Arial, sans-serif;
+  font-weight: bold;
 }

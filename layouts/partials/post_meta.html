@@ -1,15 +1,15 @@
 <span class="post-meta">
   {{ $datestr := default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format }}
-  <i class="bi bi-calendar-fill"></i>
+  <i class="fas fa-calendar"></i>
   &nbsp;{{ $datestr }} &nbsp;&nbsp;|&nbsp;&nbsp;
-  <i class="bi bi-journal-text"></i>
+  <i class="fas fa-file-alt"></i>
   &nbsp;{{ .WordCount }}&nbsp;Words &nbsp;&nbsp;|&nbsp;&nbsp;
-  <i class="bi bi-hourglass-split"></i>
+  <i class="fas fa-hourglass-half"></i>
   &nbsp;{{ .ReadingTime }}&nbsp;minutes &nbsp;&nbsp;|&nbsp;&nbsp;
-  <i class="bi bi-person-fill"></i>
+  <i class="fas fa-user-edit"></i>
   &nbsp;{{ .Site.Author.name | safeHTML }}
   <br />
-  <i class="bi bi-tags-fill"></i>
+  <i class="fas fa-tags"></i>
   {{ range .Params.tags }}
     <a href="/tags/{{ . | urlize }}/">#{{ . }}</a>
     &nbsp;
