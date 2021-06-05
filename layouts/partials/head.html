@@ -1,13 +1,26 @@
+{{- $.Scratch.Set "Title" .Title }}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-41607666-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-41607666-9");
+</script>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+{{ partial "site_metadata" . }}
 
 <link href="{{ "css/style.css" | absURL }}" rel="stylesheet" />
 <link href="{{ "fontawesome/css/all.min.css" | absURL }}" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.gstatic.com" />
-<link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="{{ "css/syntax.css" | absURL }}" />
 <link rel="stylesheet" href="{{ "css/codeblock.css" | absURL }}" />
 
@@ -17,14 +30,11 @@
 <link rel="manifest" href="/site.webmanifest" />
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 <meta name="msapplication-TileColor" content="#da532c" />
-<meta name="theme-color" content="#ffffff" />
+<meta name="theme-color" content="#fcfcfa" />
 <script
   data-ad-client="ca-pub-6280288607676836"
   async
   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
 ></script>
 
-{{ template "_internal/google_analytics_async.html" . }}
-{{ with ($.Scratch.Get "Title") }}
-  <title>{{ . }} - {{ $.Site.Title }}</title>
-{{ end }}
+{{ with ($.Scratch.Get "Title") }}<title>{{ . }} - {{ $.Site.Title }}</title>{{ end }}
