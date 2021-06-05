@@ -129,6 +129,24 @@ nav a:hover,
   color: color-contrast($primary);
 }
 
+a.btn-outline-primary {
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a.btn-outline-primary,
+a.btn-outline-primary:visited {
+  color: $primary;
+  border-color: $primary;
+}
+
+a.btn-outline-primary:hover,
+a.btn-outline-primary:focus {
+  color: color-contrast($primary);
+  background-color: $primary-hover;
+  border-color: darken($primary-hover, 10%);
+}
+
 .list-inline > li {
   display: inline-block;
   padding-right: 0.5rem;
