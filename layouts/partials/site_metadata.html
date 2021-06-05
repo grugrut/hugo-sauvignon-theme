@@ -1,0 +1,96 @@
+<meta name="description" content="{{ .Summary }}" />
+<meta name="author" content="{{ .Site.Author.name }}" />
+
+{{ with .Title | default .Site.Title }}<meta property="og:title" content="{{ . }}" />{{ end }}
+{{ with .Description | default .Summary }}<meta property="og:description" content="{{ . }}" />{{ end }}
+<meta property="og:url" content="{{ .Permalink | absURL }}" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+{{ with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+  <meta name="twitter:image" content="{{ .|absURL }}" />
+{{ end }}
+
+<meta name="twitter:card" content="summary" />
+{{ with.Title | default .Site.Title }}<meta name="twitter:title" content="{{ . | truncate 70 }}" />{{ end }}
+{{ with .Description | default .Summary }}
+  <meta property="twitter:description" content="{{ . | truncate 200 }}" />
+{{ end }}
+{{ with .Site.Author.twitter }}
+  <meta name="twitter:site" content="@{{ . }}" />
+  <meta name="twitter:creator" content="@{{ . }}" />
+{{ end }}
+{{ with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+  <meta name="twitter:image" content="{{ .|absURL }}" />
+{{ end }}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  }
+</script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "{{ .Site.Author.name }}",
+    "url": "{{ .Site.BaseURL }}",
+    "sameAs": ["https://twitter.com/{{ .Site.Author.twitter }}", "https://github.com/{{ .Site.Author.github }}"]
+  }
+</script>
+{{ if .IsPage }}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "{{ .Site.BaseURL }}",
+            "name": "home"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@id": "{{ .Permalink }}",
+            "name": "{{ .Title|humanize }}"
+          }
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "author": {
+        "name": "{{ .Site.Author.name }}"
+      },
+      "headline": {{ .Title }},
+      "description": {{ .Summary|plainify }},
+      "inLanguage": {{ .Lang }},
+      "wordCount": {{ .WordCount }},
+      "datePublished" : "{{ .PublishDate.Format "2006-01-02T15:04:05" }}",
+      "dateModified" : "{{ .Date.Format "2006-01-02T15:04:05" }}",
+      "image" : "{{ .Site.Params.logo | absURL }}",
+      "keywords" : [ "{{ range $i, $e := .Params.tags }}{{ if $i }},{{ end }}{{ $e }}{{ end }}" ],
+      "mainEntityOfPage" : "{{ .Permalink }}",
+      "publisher" : {
+        "@type": "Organization",
+        "name" : "{{ .Site.BaseURL }}",
+        "logo" : {
+          "@type" : "ImageObject",
+          "url" : "{{ .Site.Params.logo | absURL }}",
+          "height" :  60 ,
+          "width" :  60
+        }
+      }
+    }
+  </script>
+{{ end }}

@@ -5,10 +5,7 @@
         {{ range .Site.Data.social.social_icons }}
           {{ if isset $.Site.Author .id }}
             <li>
-              <a
-                href="{{ printf .url (index $.Site.Author .id) }}"
-                title="{{ .title }}"
-              >
+              <a href="{{ printf .url (index $.Site.Author .id) }}" title="{{ .title }}">
                 <button type="button" class="btn btn-primary btn-circle" />
                 <i class="{{ .icon }} btn-fa-stack "></i>
               </a>
@@ -26,11 +23,8 @@
         {{ end }}
       </ul>
       <p class="credits text-muted text-center">
-        {{ if .Site.Author.name }}{{ .Site.Author.name }} &nbsp;{{ end }} &copy;
-        {{ .Site.LastChange.Format "2006" }}
-        {{ if .Site.Title }}
-          <a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>
-        {{ end }}
+        {{ if .Site.Author.name }}{{ .Site.Author.name }} &nbsp;{{ end }} &copy; {{ .Site.LastChange.Format "2006" }}
+        {{ if .Site.Title }}<a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>{{ end }}
       </p>
     </div>
   </div>
