@@ -6,14 +6,32 @@ $dark: #7c7d7c;
 
 $body-bg: $light;
 
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/NotoSansJP-Regular.otf");
+}
+@font-face {
+  font-family: "Noto Sans JP";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/NotoSansJP-Black.otf");
+}
+
 $font-family-sans-serif: "Noto Sans JP", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 div.main {
-  box-shadow: 4px 4px 8px 0 $dark;
   padding: $spacer;
   background-color: $white;
+}
+
+@media only screen and (min-width: 768px) {
+  div.main {
+    box-shadow: 4px 4px 8px 0 $dark;
+  }
 }
 
 nav {
@@ -59,6 +77,10 @@ td {
 }
 tr:nth-child(2n) {
   background-color: $light;
+}
+
+a {
+  word-break: break-all;
 }
 
 a,
