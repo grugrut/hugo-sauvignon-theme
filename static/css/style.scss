@@ -36,17 +36,13 @@ body {
   height: 100vh;
 }
 
-.container {
-  width: 100%;
-}
-
 div.main {
-  padding: $spacer;
   background-color: $white;
 }
 
 @media only screen and (min-width: 768px) {
   div.main {
+    padding: $spacer;
     box-shadow: 4px 4px 8px 0 $dark;
   }
 }
@@ -198,6 +194,7 @@ a.btn-outline-primary:focus {
   display: inline-block;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 header,
@@ -212,7 +209,7 @@ footer {
   margin-top: $spacer * 2;
   li > a {
     box-shadow: 4px 4px 8px 0 $dark;
-    padding: $spacer * 1.5 $spacer * 2;
+    padding: $spacer * 1.25 $spacer * 1.5;
     background-color: $white;
     display: inline;
     font-weight: 900;

@@ -1,20 +1,14 @@
 {{ define "main" }}
   {{ $data := .Data }}
-  <main>
-    <div class="container">
-      <div class="row gx-5">
-        <div class="col-lg-9 col-md-9">
-          <div class="main">
-            {{ range $index, $term := .Data.Terms.Alphabetical }}
-              <a href="/{{ $data.Plural }}/{{ $term.Name | urlize }}/" class="btn btn-outline-primary">
-                {{ $term.Name }}&nbsp;
-                <span class="badge bg-dark">{{ $term.Count }}</span>
-              </a>
-            {{ end }}
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
-      </div>
+  <div class="col-lg-9 col-md-9">
+    <div class="main">
+      {{ range $index, $term := .Data.Terms.Alphabetical }}
+        <a href="/{{ $data.Plural }}/{{ $term.Name | urlize }}/" class="btn btn-outline-primary">
+          {{ $term.Name }}&nbsp;
+          <span class="badge bg-dark">{{ $term.Count }}</span>
+        </a>
+      {{ end }}
     </div>
-  </main>
+  </div>
+  <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
 {{ end }}
