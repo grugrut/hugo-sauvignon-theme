@@ -4,7 +4,11 @@
     {{- partial "head.html" . -}}
   </head>
   <body>
-    {{- partial "nav.html" . -}} {{- partial "header.html" . -}} {{ block "main" . }}{{ end }}
+    {{- partial "nav.html" . -}} {{- partial "header.html" . -}}
+
+    <main class="container">
+      <div class="row gy-5">{{ block "main" . }}{{ end }}</div>
+    </main>
     {{- partial "footer.html" . -}}
 
     <script
