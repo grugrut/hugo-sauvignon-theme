@@ -234,11 +234,16 @@ pre.chroma {
 
 blockquote {
   font-style: italic;
-  border-left: 2px solid $dark;
+  border-left: 4px solid $dark;
   padding-left: 1rem;
   margin-left: 1rem;
+  overflow-wrap: break-word;
 }
 
 .disqus-comments {
   margin-top: 2rem;
+}
+
+.post-entry {
+  overflow-wrap: break-word;
 }
