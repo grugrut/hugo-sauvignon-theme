@@ -14,11 +14,26 @@
 
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 {{ partial "site_metadata" . }}
 
 <link rel="alternate" href="{{ "index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+<link
+  rel="preload prefetch"
+  as="font"
+  type="font/woff2"
+  href="{{ "fontawesome/webfonts/fa-brands-400.woff2" | absURL }}"
+  crossorigin
+/>
+<link
+  rel="preload prefetch"
+  as="font"
+  type="font/woff2"
+  href="{{ "fontawesome/webfonts/fa-solid-900.woff2" | absURL }}"
+  crossorigin
+/>
 <link href="{{ "fontawesome/css/all.min.css" | absURL }}" rel="stylesheet" />
 <link href="{{ "css/style.css" | absURL }}" rel="stylesheet" />
 

@@ -7,7 +7,10 @@
     {{- partial "nav.html" . -}} {{- partial "header.html" . -}}
 
     <main class="container">
-      <div class="row gy-5">{{ block "main" . }}{{ end }}</div>
+      <div class="row gy-5">
+        <div class="col-lg-9 col-md-9">{{ block "main" . }}{{ end }}</div>
+        <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
+      </div>
     </main>
     {{- partial "footer.html" . -}}
 
