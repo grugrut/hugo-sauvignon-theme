@@ -37,13 +37,13 @@ $font-family-sans-serif: "Noto Sans", "Noto Sans CJK JP", "Helvetica Neue", Helv
 @import "../../node_modules/bootstrap/scss/root";
 @import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
+//@import "../../node_modules/bootstrap/scss/images";
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/tables";
+//@import "../../node_modules/bootstrap/scss/tables";
 //@import "../../node_modules/bootstrap/scss/forms";
 @import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/transitions";
+//@import "../../node_modules/bootstrap/scss/transitions";
 //@import "../../node_modules/bootstrap/scss/dropdown";
 //@import "../../node_modules/bootstrap/scss/button-group";
 @import "../../node_modules/bootstrap/scss/nav";
@@ -145,7 +145,7 @@ a {
 
 a,
 a:visited {
-  color: $blue;
+  color: $blue-600;
   text-decoration: none;
 }
 
@@ -157,6 +157,10 @@ a:focus {
 
 .text-muted > a {
   color: $text-muted;
+}
+
+#widget-tags > a {
+  word-break: break-word;
 }
 
 article.post-preview {
@@ -252,17 +256,26 @@ footer {
   padding-left: 0;
   margin-top: $spacer * 2;
   li > a {
-    box-shadow: 4px 4px 8px 0 $dark;
-    padding: $spacer * 1.25 $spacer * 1.5;
+    padding: $spacer $spacer;
     background-color: $white;
     display: inline;
     font-weight: 900;
+    border: 1px solid $dark;
   }
   .next > a {
     float: right;
   }
   .previous > a {
     float: left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .pager {
+    li > a {
+      padding: $spacer * 1.25 $spacer * 1.5;
+      box-shadow: 4px 4px 8px 0 $dark;
+      border: none;
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-<meta name="description" content="{{ .Summary }}" />
+<meta name="description" content="{{ .Summary | default .Site.Title }}" />
 <meta name="author" content="{{ .Site.Author.name }}" />
 
 {{ with .Title | default .Site.Title }}<meta property="og:title" content="{{ . }}" />{{ end }}

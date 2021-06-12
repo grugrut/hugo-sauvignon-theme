@@ -1,24 +1,21 @@
 {{ define "main" }}
-  <div class="col-lg-9 col-md-9">
-    <div class="main">
-      {{ $page := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-      {{ range $page.Pages }}{{ partial "post_preview" . }}{{ end }}
-    </div>
-
-    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-      <ul class="pager main-pager">
-        {{ if .Paginator.HasPrev }}
-          <li class="previous">
-            <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; NEWER POSTS</a>
-          </li>
-        {{ end }}
-        {{ if .Paginator.HasNext }}
-          <li class="next">
-            <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">OLDER POSTS &rarr;</a>
-          </li>
-        {{ end }}
-      </ul>
-    {{ end }}
+  <div class="main">
+    {{ $page := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    {{ range $page.Pages }}{{ partial "post_preview" . }}{{ end }}
   </div>
-  <div class="col-lg-3 col-md-3">{{ partial "sidebar" }}</div>
+
+  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+    <ul class="pager main-pager">
+      {{ if .Paginator.HasPrev }}
+        <li class="previous">
+          <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">&laquo; Newer Posts</a>
+        </li>
+      {{ end }}
+      {{ if .Paginator.HasNext }}
+        <li class="next">
+          <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">Older Posts &raquo;</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ end }}
 {{ end }}
