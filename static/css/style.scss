@@ -439,3 +439,9 @@ a.btn-outline-primary:focus {
   background-color: $primary-hover;
   border-color: darken($primary-hover, 10%);
 }
+
+.google-placed {
+  min-height: 280px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
