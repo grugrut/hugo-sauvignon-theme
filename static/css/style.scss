@@ -384,6 +384,14 @@ pre > code {
   color: inherit;
 }
 
+kbd {
+  color: #fff;
+  background-color: #000;
+  padding: 4px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
 // button
 .list-inline > li {
   display: inline-block;
