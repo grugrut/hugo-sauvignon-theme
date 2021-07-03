@@ -370,18 +370,30 @@ tr:nth-child(2n) {
   text-align: center;
 }
 
+// 本文中
 code {
   color: $red;
-  background-color: $gray;
+  background-color: lighten($gray, 10%);
+  border: 1px solid $gray;
+  border-radius: 4px;
   padding: 2px;
   font-size: 0.9rem;
 }
 
+// コードスニペット
 pre > code {
   background-color: inherit;
   padding: inherit;
   font-size: inherit;
   color: inherit;
+  border: inherit;
+  border-radius: inherit;
+  & > a {
+    color: inherit;
+  }
+  & > a:hover {
+    color: inherit;
+  }
 }
 
 kbd {
