@@ -175,6 +175,10 @@ footer {
   background-color: $gray;
 }
 
+footer ul.footer-links {
+  padding-inline-start: 0;
+}
+
 // node
 h1,
 h2,
@@ -240,6 +244,7 @@ a:focus {
 
 #widget-tags > a {
   word-break: break-word;
+  margin-right: 0.25em;
 }
 
 article.post-preview {
@@ -270,8 +275,6 @@ article.post-preview a:focus,
 article.post-preview a:hover,
 nav a:focus,
 nav a:hover,
-footer a,
-footer a:visited,
 .pager a:focus,
 .pager a:hover {
   text-decoration: none;
@@ -312,7 +315,6 @@ a.post-read-more {
   }
 }
 
-//
 img {
   width: 100%;
 }
@@ -362,8 +364,7 @@ tr:nth-child(2n) {
 }
 
 #widget-recent-post > ul {
-  list-style-type: none;
-  padding-inline-start: 0;
+  padding-inline-start: 1em;
 }
 
 .text-center {

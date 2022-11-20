@@ -1,6 +1,7 @@
 {{ define "main" }}
   {{ with .Content }}{{ . }}{{ end }}
 
+
   <div class="main">{{ range .Paginator.Pages }}{{ partial "post_preview" . }}{{ end }}</div>
 
   {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}

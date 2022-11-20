@@ -23,7 +23,8 @@
         {{ end }}
       </ul>
       <p class="credits text-center">
-        {{ if .Site.Author.name }}{{ .Site.Author.name }}&nbsp;{{ end }} &copy; {{ .Site.LastChange.Format "2006" }}
+        {{ if .Site.Author.name }}{{ .Site.Author.name }}&nbsp;{{ end }} &copy;
+        {{ .Site.LastChange.Format "2006" }}
         {{ if .Site.Title }}<a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>{{ end }}
       </p>
     </div>

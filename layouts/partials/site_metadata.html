@@ -10,6 +10,7 @@
   <meta name="twitter:image" content="{{ .|absURL }}" />
 {{ end }}
 
+
 <meta name="twitter:card" content="summary" />
 {{ with.Title | default .Site.Title }}<meta name="twitter:title" content="{{ . | truncate 70 }}" />{{ end }}
 {{ with .Description | default .Summary }}
@@ -30,8 +31,7 @@
     "name": "{{ .Site.Title }}",
     "url": "{{ .Site.BaseURL }}"
   }
-</script>
-<script type="application/ld+json">
+</script><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Person",
@@ -64,8 +64,7 @@
         }
       ]
     }
-  </script>
-  <script type="application/ld+json">
+  </script>  <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Article",

@@ -1,13 +1,16 @@
 {{- $.Scratch.Set "Title" .Title }}
 
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGM27JJXF8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
 
-  gtag('config', 'G-MGM27JJXF8');
+  gtag("config", "G-MGM27JJXF8");
   gtag("config", "UA-41607666-9");
 </script>
 
@@ -16,6 +19,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 {{ partial "site_metadata" . }}
+
 
 <link rel="alternate" href="{{ "index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}" />
 
