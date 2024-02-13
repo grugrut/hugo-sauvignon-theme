@@ -11,7 +11,7 @@
   <br />
   <i class="fas fa-tags"></i>
   {{ range .Params.tags }}
-    <a href="/tags/{{ . | urlize }}/">#{{ . }}</a>
+    <a href="/tags/{{ . | urlize }}/">#{{ upper . }}</a>
     &nbsp;
   {{ end }}
 </span>
