@@ -30,9 +30,9 @@
 {{ $img = $img | images.Filter $filter }}
 
 {{ with .Params.share_img | default .Params.image | default .Site.Params.logo }}
-<meta name="og:image" content="{{ .|absURL }}" />
+<meta property="og:image" content="{{ .|absURL }}" />
 {{ else }}
-<meta name="og:image" content="{{ $img.RelPermalink }}">
+<meta property="og:image" content="{{ $img.RelPermalink }}">
 {{ end }}
 
 
