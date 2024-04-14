@@ -36,7 +36,7 @@
 {{ end }}
 
 
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 {{ with .Title | default .Site.Title }}<meta name="twitter:title" content="{{ . | truncate 70 }}" />{{ end }}
 {{ with .Description | default .Summary }}
 <meta property="twitter:description" content="{{ . | truncate 200 }}" />
