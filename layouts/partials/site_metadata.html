@@ -32,7 +32,7 @@
 {{ with .Params.share_img | default .Params.image | default .Site.Params.logo }}
 <meta property="og:image" content="{{ .|absURL }}" />
 {{ else }}
-<meta property="og:image" content="{{ $img.RelPermalink }}">
+<meta property="og:image" content="{{ $img.Permalink }}">
 {{ end }}
 
 
@@ -48,7 +48,7 @@
 {{ with .Params.share_img | default .Params.image | default .Site.Params.logo }}
 <meta name="twitter:image" content="{{ .|absURL }}" />
 {{ else }}
-<meta name="twitter:image" content="{{ $img.RelPermalink }}" />
+<meta name="twitter:image" content="{{ $img.Permalink }}" />
 {{ end }}
 
 <script type="application/ld+json">
