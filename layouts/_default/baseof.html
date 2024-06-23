@@ -10,8 +10,15 @@
 
     <main class="container">
       <div class="row">
+        {{ if eq .Type "posts" }}
+        <div class="left-side">{{ partial "toc" . }}</div>
         <div class="primary">{{ block "main" . }}{{ end }}</div>
-        <div class="side">{{ partial "sidebar" }}</div>
+        <div class="right-side">{{ partial "sidebar" }}</div>
+        {{ else }}
+        <div class="left-side"></div>
+        <div class="primary">{{ block "main" . }}{{ end }}</div>
+        <div class="right-side">{{ partial "sidebar" }}</div>
+        {{ end }}
       </div>
     </main>
     {{- partial "footer.html" . -}}

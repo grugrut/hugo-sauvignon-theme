@@ -98,48 +98,71 @@ header > .container > .row > * {
   padding: 0 8px;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen {
   .container {
-    width: 90%;
+    max-width: 90%;
   }
+}
 
+// -1024
+@media only screen and (576px <= width) {
   .main {
     box-shadow: 4px 4px 8px 0 $dark;
     padding: 2px 16px;
   }
 }
 
-@media only screen and (min-width: 768px) {
+// 1024-1600
+@media only screen and (1024px <= width) {
   .container {
-    max-width: 736px;
+    max-width: 94%;
   }
 
   .primary {
-    width: 74%; //552
+    width: 68%; //552
     margin-right: auto;
   }
 
-  .side {
-    width: 24%; //184
+  .left-side {
+    width: 14%; //184
+    height: 100vh;
+    top: 0;
+    margin-right: auto;
+    margin-top: 0;
+    font-size: 16px;
+    position: sticky;
+  }
+
+  .right-side {
+    width: 14%; //184
     margin-left: auto;
     margin-top: 0;
+    font-size: 16px;
   }
+
 }
 
-@media only screen and (min-width: 1024px) {
+// 1600-
+@media only screen and (1600px <= width) {
   .container {
-    max-width: 960px;
+    max-width: 1540px;
   }
-}
 
-@media only screen and (min-width: 1400px) {
-  .container {
-    max-width: 1340px;
+  .primary {
+    width: 960px;
+  }
+
+  .right-side {
+    width: 300px;
+  }
+
+  .left-side {
+    width: 240px;
   }
 }
 
 // page header & footer
-nav {
+nav.brand {
   background-color: $gray;
   font-weight: 900;
   padding: 16px 0;
@@ -157,7 +180,7 @@ nav {
 }
 
 @media only screen and (min-width: 768px) {
-  nav {
+  nav.brand {
     ul {
       font-size: 2rem;
       float: right;
@@ -366,6 +389,10 @@ tr:nth-child(2n) {
 }
 
 #widget-recent-post > ul {
+  padding-inline-start: 1em;
+}
+
+#TableOfContents ul {
   padding-inline-start: 1em;
 }
 

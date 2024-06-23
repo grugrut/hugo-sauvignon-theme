@@ -28,7 +28,7 @@
           {{ $.Scratch.Set "has_related" true }}
         {{ end }}
         {{ if $.Scratch.Get "has_related" }}
-          <h4 class="see-also">See also</h4>
+          <h4 class="see-also">関連記事</h4>
           <ul>
             {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
             {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
