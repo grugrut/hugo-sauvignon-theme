@@ -37,6 +37,10 @@ $font-family-sans-serif: "Noto Sans", "Noto Sans CJK JP", "Helvetica Neue", Helv
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 article,
 aside,
 header,
