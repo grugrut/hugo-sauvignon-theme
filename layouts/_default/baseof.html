@@ -23,5 +23,38 @@
     </main>
     {{- partial "footer.html" . -}}
     <script src="{{ "js/lightbox-plus-jquery.min.js" | absURL }}"></script>
+    {{ if eq .Type "posts" }}
+    <script>
+      const observedElements = document.querySelector("article").querySelectorAll("h1, h2, h3, h4, h5, h6");
+      const anchorLinks = document.querySelector("#TableOfContents").querySelectorAll("a");
+
+      let focusSectionHeading = "";
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const intersectionHeading = entries.find((heading) => heading.isIntersecting);
+          if (!intersectionHeading) return;
+
+          focusSectionHeading = "#" + encodeURI(intersectionHeading.target.id);
+
+          anchorLinks.forEach((anchorLink) => {
+            console.log(anchorLink.hash, focusSectionHeading);
+            if (anchorLink.hash === focusSectionHeading) {
+              anchorLink.setAttribute("class", "focus");
+            } else {
+              anchorLink.removeAttribute("class");
+            }
+          });
+        },
+        {
+          rootMargin: "0% 0px -80%",
+        }
+      );
+
+      observedElements.forEach((observedElement) => {
+        observer.observe(observedElement);
+      });
+    </script>
+    {{ end }}
   </body>
 </html>
