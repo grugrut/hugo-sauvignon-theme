@@ -11,7 +11,7 @@
     <h3>Tags</h3>
     {{ range $name, $tag := site.Taxonomies.tags }}
       {{ with site.GetPage (printf "/tags/%s" $name) }}
-        <a href="{{ .RelPermalink }}">{{ upper .Title }}({{ $tag.Count }})</a>
+        <a href="{{ .RelPermalink }}">{{ .Title }}({{ $tag.Count }})</a>
       {{ end }}
     {{ end }}
   </div>

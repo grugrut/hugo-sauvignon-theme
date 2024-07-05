@@ -3,7 +3,7 @@
   <div class="main">
     {{ range $index, $term := .Data.Terms.Alphabetical }}
       <a href="/{{ $data.Plural }}/{{ $term.Name | urlize }}/" class="btn btn-outline-primary">
-        {{ upper $term.Name }}&nbsp;
+        {{ $term.Name }}&nbsp;
         <span class="badge bg-dark">{{ $term.Count }}</span>
       </a>
     {{ end }}
