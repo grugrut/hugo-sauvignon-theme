@@ -123,18 +123,19 @@ header > .container > .row > * {
   }
 
   .primary {
-    width: calc(100% - 240px - 13px); //552
+    width: calc(100% - 246px - 13px); //552
     margin-right: auto;
   }
 
   .left-side {
-    width: 240px; //184
-    height: 100vh;
+    width: 246px; //184
+    height: 90vh;
     top: 0;
     margin-right: auto;
     margin-top: 0;
     font-size: 16px;
     position: sticky;
+    overflow-y: scroll;
   }
 }
 
