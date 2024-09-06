@@ -91,7 +91,7 @@ body {
   padding: 2px 8px;
 }
 
-.side {
+.right-side, .left-side {
   flex: 0 0 auto;
   padding: 0 8px;
   font-size: 16px;
@@ -128,7 +128,7 @@ header > .container > .row > * {
   }
 
   .left-side {
-    width: 246px; //184
+    width: 246px;
     height: 90vh;
     top: 0;
     margin-right: auto;
@@ -144,7 +144,7 @@ header > .container > .row > * {
     width: calc(100% - 240px - 300px - 26px);
   }
   .right-side {
-    width: 300px; //184
+    width: 296px;
     margin-left: auto;
     margin-top: 0;
     font-size: 16px;
