@@ -507,3 +507,15 @@ a.btn-outline-primary:focus {
   margin-bottom: 20px;
   text-align: center;
 }
+
+article div.info {
+  padding: 16px;
+  border-radius: 32px;
+  border: 2px solid $blue;
+  background-color: lighten($blue, 20%);
+  color: $white;
+}
+
+article div.info::before {
+  content: "Information";
+}
