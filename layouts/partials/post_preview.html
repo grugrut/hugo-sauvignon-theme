@@ -5,7 +5,7 @@
   <p class="post-meta">{{ partial "post_meta" . }}</p>
   <div class="post-entry">
     {{ if .Truncated }}
-      {{ .Summary }}......
+      {{ .Summary | plainify }}
       <a href="{{ .Permalink }}" class="post-read-more">[Read More]</a>
     {{ end }}
   </div>
