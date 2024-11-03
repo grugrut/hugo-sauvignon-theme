@@ -111,19 +111,20 @@ header > .container > .row > * {
 // -1024
 @media only screen and (576px <= width) {
   .main {
-    box-shadow: 4px 4px 8px 0 $dark;
+    box-shadow: 0px 0px 8px 0px $dark;
+    border-radius: 4px;
     padding: 2px 16px;
   }
 }
 
-// 1024-1600
-@media only screen and (1024px <= width) {
+// 1280-1400
+@media only screen and (1280px <= width) {
   .container {
     max-width: 94%;
   }
 
   .primary {
-    width: calc(100% - 246px - 13px); //552
+    width: calc(100% - 246px - 29px); //552
     margin-right: auto;
   }
 
@@ -131,6 +132,7 @@ header > .container > .row > * {
     width: 246px;
     height: 90vh;
     top: 0;
+    margin-left: 0;
     margin-right: auto;
     margin-top: 0;
     font-size: 16px;
@@ -141,11 +143,12 @@ header > .container > .row > * {
 
 @media only screen and (1400px <= width) {
   .primary {
-    width: calc(100% - 240px - 300px - 26px);
+    width: calc(100% - 246px - 296px - 58px);
   }
   .right-side {
     width: 296px;
     margin-left: auto;
+    margin-right: 0;
     margin-top: 0;
     font-size: 16px;
   }
@@ -154,7 +157,7 @@ header > .container > .row > * {
 // 1600-
 @media only screen and (1600px <= width) {
   .container {
-    max-width: 1540px;
+    max-width: 1560px;
   }
 
   .primary {
@@ -249,6 +252,10 @@ article.post h4 {
   border-bottom: 2px solid $dark;
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+div.header {
+  margin-bottom: 4rem;
 }
 
 // link
