@@ -1,9 +1,11 @@
 <header>
   <div class="container">
     <div class="row header">
-      <h1>{{ .Title }}</h1>
+      {{ if not .Page.IsHome}}
+      <h1> {{ .Title }} </h1>
       <hr />
       {{ if eq .Type "posts" }}{{ partial "post_meta.html" . }}{{ end }}
+      {{ end }}
     </div>
   </div>
 </header>
