@@ -1,13 +1,13 @@
 {{ define "main" }}
-  {{ $data := .Data }}
-  <div class="main">
-    {{ range $index, $term := .Data.Terms.Alphabetical.Reverse }}
-      {{ if eq (len $term.Name) 4 }}
-        <h2>{{ $term.Name }}</h2>
-        <ul>
-          {{ range $term.Pages }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
-        </ul>
-      {{ end }}
-    {{ end }}
-  </div>
+{{ $data := .Data }}
+<div class="main">
+  {{ range $index, $term := .Data.Terms.Alphabetical.Reverse }}
+  {{ if eq (len $term.Name) 4 }}
+  <h2>{{ $term.Name }}</h2>
+  <ul>
+    {{ range $term.Pages }}<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>{{ end }}
+  </ul>
+  {{ end }}
+  {{ end }}
+</div>
 {{ end }}
