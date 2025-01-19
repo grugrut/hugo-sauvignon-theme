@@ -1,5 +1,5 @@
 {{ if (.Params.comments) | or (and (or (not (isset .Params "comments")) (eq .Params.comments nil)) (.Site.Params.comments)) }}
-  {{ if .Site.Config.Services.Disqus.Shortname }}
+{{ if .Site.Params.Comment.Disqus.shortname }}
     <div class="comments">
       <div id="disqus_thread"></div>
       <script type="text/javascript" src="/js/disqus-loader.js"></script>
@@ -11,7 +11,7 @@
           var dsq = document.createElement("script");
           dsq.type = "text/javascript";
           dsq.async = true;
-          var disqus_shortname = "{{ .Site.DisqusShortname }}";
+          var disqus_shortname = "{{ .Site.Params.Comment.Disqus.Shortname }}";
           dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
           disqusLoader("#disqus_thread", { scriptUrl: dsq.src });
         })();

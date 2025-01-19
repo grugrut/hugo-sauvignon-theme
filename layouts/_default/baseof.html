@@ -38,7 +38,6 @@
           focusSectionHeading = "#" + encodeURI(intersectionHeading.target.id);
 
           anchorLinks.forEach((anchorLink) => {
-            console.log(anchorLink.hash, focusSectionHeading);
             if (anchorLink.hash === focusSectionHeading) {
               anchorLink.setAttribute("class", "focus");
             } else {

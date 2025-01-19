@@ -7,7 +7,7 @@
   <i class="fas fa-hourglass-half"></i>
   &nbsp;{{ .ReadingTime }}&nbsp;minutes &nbsp;&nbsp;|&nbsp;&nbsp;
   <i class="fas fa-user-edit"></i>
-  &nbsp;{{ .Site.Author.name | safeHTML }}
+  &nbsp;{{ .Site.Params.Author.name | safeHTML }}
   <br />
   <i class="fas fa-tags"></i>
   {{ range .Params.tags }}

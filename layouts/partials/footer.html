@@ -3,7 +3,7 @@
     <div class="row">
       <ul class="list-inline text-center footer-links">
         {{ range .Site.Data.social.social_icons }}
-          {{ if isset $.Site.Author .id }}
+          {{ if isset $.Site.Params.Author .id }}
             <li>
               <a href="{{ printf .url (index $.Site.Author .id) }}" title="{{ .title }}">
                 <button type="button" class="btn btn-primary btn-circle" />
@@ -23,7 +23,7 @@
         {{ end }}
       </ul>
       <p class="credits text-center">
-        {{ if .Site.Author.name }}{{ .Site.Author.name }}&nbsp;{{ end }} &copy;
+        {{ if .Site.Params.Author.name }}{{ .Site.Params.Author.name }}&nbsp;{{ end }} &copy;
         {{ .Site.Lastmod.Format "2006" }}
         {{ if .Site.Title }}<a href="{{ "" | absLangURL }}">{{ .Site.Title }}</a>{{ end }}
       </p>
