@@ -1,44 +1,44 @@
 {{ define "main" }}
   <div class="main">
-    <article class="post">
+    <article class="post" data-pagefind-body>
       {{ .Content }}
-      <hr />
-      <div class="google-placed">
-        <script
-          defer
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6280288607676836"
-          crossorigin="anonymous"
-        ></script>
-        <!-- blog-responsive-bottom -->
-        <ins
-          class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-6280288607676836"
-          data-ad-slot="1635185452"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-      </div>
-      <section id="social-share">{{ partial "social_share" . }}</section>
-      {{ if .Site.Params.showRelatedPosts }}
-        {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-          {{ $.Scratch.Set "has_related" true }}
-        {{ end }}
-        {{ if $.Scratch.Get "has_related" }}
-          <h4 class="see-also">関連記事</h4>
-          <ul>
-            {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
-            {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
-              <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-            {{ end }}
-          </ul>
-        {{ end }}
-        <div class="disqus-comments">{{ partial "disqus.html" . }}</div>
-      {{ end }}
     </article>
+    <hr />
+    <div class="google-placed">
+      <script
+        defer
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6280288607676836"
+        crossorigin="anonymous"
+        ></script>
+      <!-- blog-responsive-bottom -->
+      <ins
+        class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-6280288607676836"
+        data-ad-slot="1635185452"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+        ></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <section id="social-share">{{ partial "social_share" . }}</section>
+    {{ if .Site.Params.showRelatedPosts }}
+    {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+    {{ $.Scratch.Set "has_related" true }}
+    {{ end }}
+    {{ if $.Scratch.Get "has_related" }}
+    <h4 class="see-also">関連記事</h4>
+    <ul>
+      {{ $num_to_show := .Site.Params.related_content_limit | default 5 }}
+      {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+    <div class="disqus-comments">{{ partial "disqus.html" . }}</div>
+    {{ end }}
   </div>
   {{ if ne .Type "page" }}
     <ul class="pager blog-pager">

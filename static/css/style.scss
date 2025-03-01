@@ -410,6 +410,10 @@ tr:nth-child(2n) {
   padding-inline-start: 1em;
 }
 
+#widget-search {
+  margin-bottom: 1rem;
+}
+
 #TableOfContents ul {
   padding-inline-start: 1em;
 }
@@ -585,4 +589,14 @@ article div.warn::before {
   top: 50%;
   margin-top: -1.5rem;
   color: $yellow;
+}
+
+a.modal-open-button, a.modal-open-button:hover {
+  padding: 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $white;
+  border: 2px solid $dark;
+  border-radius: 5px;
+  color: $dark;
 }
