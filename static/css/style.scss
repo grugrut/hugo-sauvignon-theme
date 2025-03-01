@@ -177,7 +177,7 @@ header > .container > .row > * {
 
 // page header & footer
 nav.brand {
-  background-color: $gray;
+  background-color: $primary-hover;
   font-weight: 900;
   padding: 16px 0;
   font-size: 2rem;
@@ -190,6 +190,10 @@ nav.brand {
       float: left;
       padding: 0 8px;
     }
+  }
+  a, a:hover, a:visited {
+    color: $white;
+    text-decoration: none;
   }
 }
 
@@ -209,12 +213,12 @@ nav.brand {
 
 footer {
   margin-top: 32px;
-  background-color: $gray;
+
+  ul.footer-links {
+    padding-inline-start: 0;
+  }
 }
 
-footer ul.footer-links {
-  padding-inline-start: 0;
-}
 
 // node
 h1,
@@ -304,8 +308,6 @@ article.post-preview {
 
 article.post-preview a,
 article.post-preview a:visited,
-nav a,
-nav a:visited,
 footer a,
 footer a:visited,
 .pager a,
@@ -316,8 +318,6 @@ footer a:visited,
 
 article.post-preview a:focus,
 article.post-preview a:hover,
-nav a:focus,
-nav a:hover,
 .pager a:focus,
 .pager a:hover {
   text-decoration: none;
