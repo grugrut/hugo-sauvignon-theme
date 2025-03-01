@@ -12,22 +12,22 @@
 {{ else }}
 {{ $img := resources.Get "images/og-background.png"}}
 {{ $font := resources.GetRemote "https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/Japanese/NotoSansCJKjp-Black.otf" }}
-{{ $options := dict "color" "#000000" "size" 60 "x" 120 "y" 20 "font" $font}}
+{{ $options := dict "color" "#FCFCFA" "size" 60 "x" 120 "y" 20 "font" $font}}
 {{ $filter := images.Text .Site.Title $options}}
 {{ $img = $img | images.Filter $filter }}
-{{ $options := dict "color" "#000000" "size" 40 "x" 50 "y" 150 "font" $font}}
+{{ $options := dict "color" "#3D3D3D" "size" 40 "x" 50 "y" 150 "font" $font}}
 {{ $sub := substr .Title 0 16 }}
 {{ $filter := images.Text $sub $options}}
 {{ $img = $img | images.Filter $filter }}
-{{ $options := dict "color" "#000000" "size" 40 "x" 50 "y" 200 "font" $font}}
+{{ $options := dict "color" "#3D3D3D" "size" 40 "x" 50 "y" 200 "font" $font}}
 {{ $sub := substr .Title 16 16 }}
 {{ $filter := images.Text $sub $options}}
 {{ $img = $img | images.Filter $filter }}
-{{ $options := dict "color" "#000000" "size" 40 "x" 50 "y" 250 "font" $font}}
+{{ $options := dict "color" "#3D3D3D" "size" 40 "x" 50 "y" 250 "font" $font}}
 {{ $sub := substr .Title 32 16 }}
 {{ $filter := images.Text $sub $options}}
 {{ $img = $img | images.Filter $filter }}
-{{ $options := dict "color" "#000000" "size" 40 "x" 50 "y" 300 "font" $font}}
+{{ $options := dict "color" "#3D3D3D" "size" 40 "x" 50 "y" 300 "font" $font}}
 {{ $sub := substr .Title 48 16 }}
 {{ $filter := images.Text $sub $options}}
 {{ $img = $img | images.Filter $filter }}
