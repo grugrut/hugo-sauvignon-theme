@@ -362,14 +362,6 @@ img {
   width: 100%;
 }
 
-pre {
-  overflow: auto;
-  font-size: 14px;
-}
-
-pre.chroma {
-  padding: 0.5rem;
-}
 
 .fa-hatena:before {
   content: "B!";
@@ -446,17 +438,33 @@ code {
 .highlight {
   position: relative;
 
-  & > pre > code::before {
-    content: attr(data-lang);
+  &[caption]::before {
+    content: attr(caption);
     position: absolute;
     top: 0;
-    right: 0;
-    padding: 0.25rem 0.5rem;
+    left: 1rem;
+    padding: 0.2rem 0.5rem;
     background-color: $dark;
     color: $white;
-    border-radius: 0 0 0 4px;
+    border-radius: 0 0 4px 4px;
+    font-size: 0.9rem;
+  }
+
+  &[caption] > pre {
+    padding-top: 2rem;
   }
 }
+
+pre {
+  overflow: auto;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+pre.chroma {
+  padding: 0.5rem;
+}
+
 
 pre > code {
   background-color: inherit;
